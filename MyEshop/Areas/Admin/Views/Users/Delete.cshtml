@@ -1,0 +1,22 @@
+﻿@model DataLayer.Users
+
+@{
+    ViewBag.Title = "حذف";
+}
+
+
+
+
+<div>
+    <h3 class="font-tahoma">ایا از حذف این شخص @Model.UserName با ایمیل : @Model.Email اطمینان دارید ؟</h3>
+    
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف شخص" class="btn btn-danger" /> <br/><br />
+            <a class="btn btn-info" href="/Admin/Users/Index">انصراف و بازگشت به قبل</a>
+        </div>
+    }
+</div>
