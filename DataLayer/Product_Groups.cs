@@ -12,19 +12,20 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class Roles
+    public partial class Product_Groups
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Roles()
+        public Product_Groups()
         {
-            this.Users = new HashSet<Users>();
+            this.Product_Groups1 = new HashSet<Product_Groups>();
         }
     
-        public int RoleID { get; set; }
-        public string RoleTitle { get; set; }
-        public string RoleName { get; set; }
+        public int GroupID { get; set; }
+        public string GroupTitle { get; set; }
+        public Nullable<int> ParentID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<Product_Groups> Product_Groups1 { get; set; }
+        public virtual Product_Groups Product_Groups2 { get; set; }
     }
 }
