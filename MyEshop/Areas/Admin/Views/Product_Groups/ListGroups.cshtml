@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DataLayer.Product_Groups>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupTitle)
+        </th>
+        <th>
+            زیرگروه ها
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr id="group_@(item.GroupID)">
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupTitle)
+            </td>
+            <td>
+                @if (item.Product_Groups1.Any())
+                {
+                <ul>
+                    @foreach (var sub in item.Product_Groups1)
+                    {
+                        <br />
+                        <li id="group_@(sub.GroupID)">
+                            @sub.GroupTitle
+
+                            <span>--------------</span>
+                            <span>
+                                <a class="btn btn-warning btn-xs " onclick="Edit(@sub.GroupID)">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                ||
+                                <a class="btn btn-danger btn-xs " onclick="Delete(@sub.GroupID)">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                            </span>
+                        </li>
+                        <br />
+                    }
+                </ul>
+                }
+
+                @Html.DisplayFor(modelItem => item.Product_Groups2.GroupTitle)
+            </td>
+            <td>
+
+                <br />
+
+                <a class="btn btn-info btn-xs" onclick="Create(@item.GroupID)">
+                    <i class="fa fa-plus"></i>
+                </a>
+                <a class="btn btn-warning btn-xs" onclick="Edit(@item.GroupID)">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a class="btn btn-danger btn-xs" onclick="Delete(@item.GroupID)">
+                    <i class="fa fa-trash-o"></i>
+                </a>
+                <br />
+                <br />
+
+            </td>
+        </tr>
+    }
+
+</table>
