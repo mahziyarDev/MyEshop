@@ -136,6 +136,7 @@
     <Content Include="Content\js\wow.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\ProductImages\NoImage.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\UserPanel\Views\web.config" />
@@ -155,6 +156,16 @@
     <Content Include="Areas\Admin\Views\Product_Groups\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Product_Groups\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product_Groups\ListGroups.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_Tags\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_Tags\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_Tags\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_Tags\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product_Tags\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -171,7 +182,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Product_GroupsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Product_TagsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\UserPanel\Controllers\AccountController.cs" />
     <Compile Include="Areas\UserPanel\Controllers\UserBaseController.cs" />
