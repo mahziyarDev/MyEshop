@@ -18,6 +18,9 @@ body {
 .list_none {
     list-style-type: none;
 }
+.btn-xs {
+    margin-top: 10px;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 /*input,
 select,
