@@ -1,11 +1,22 @@
-﻿.font-tahoma {
-    font-family: Tahoma !important;
+﻿@font-face {
+    font-family: iransans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/Content/IransansFont/IRANSansWeb.eot');
+    src: url('/Content/IransansFont/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('/Content/IransansFont/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('/Content/IransansFont/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('/Content/IransansFont/IRANSansWeb.ttf') format('truetype');
+}
+
+.font-tahoma {
+    font-family: iransans !important;
 }
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family:Tahoma !important;
+    font-family: iransans !important;
 }
 .btn-index-user>i{
     font-size:16px;

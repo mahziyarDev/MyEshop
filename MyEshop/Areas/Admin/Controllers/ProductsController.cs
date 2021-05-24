@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
 using DataLayer;
@@ -208,6 +209,49 @@ namespace MyEshop.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+        //for gallery
+        public ActionResult Gallery(int id)
+        {
+            ViewBag.ProductGallery = db.Product_Galleries.Where(p => p.ProductID == id).ToList();
+            return View(new Product_Galleries()
+            {
+                ProductID = id
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Gallery(Product_Galleries galleries,HttpPostedFileBase imgUp)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (imgUp != null && imgUp.IsImage())
+                {
+                    galleries.ImageName = Guid.NewGuid().ToString() + Path.GetExtension(imgUp.FileName);
+                    imgUp.SaveAs(Server.MapPath("/Images/ProductImages/" + galleries.ImageName));
+                    ImageResizer img = new ImageResizer();
+                    img.Resize(Server.MapPath("/Images/ProductImages/" + galleries.ImageName),
+                        Server.MapPath("/Images/ProductImages/Thumb/" + galleries.ImageName));
+                    db.Product_Galleries.Add(galleries);
+                    db.SaveChanges();
+                }
+            }
+
+            return RedirectToAction("Gallery", new {id = galleries.ProductID});
+        }
+
+        public ActionResult DeleteGallery(int id)
+        {
+            var gallery = db.Product_Galleries.Find(id);
+
+            System.IO.File.Delete(Server.MapPath("/Images/ProductImages/" + gallery.ImageName));
+            System.IO.File.Delete(Server.MapPath("/Images/ProductImages/Thumb/" + gallery.ImageName));
+
+            db.Product_Galleries.Remove(gallery);
+            db.SaveChanges();
+            return RedirectToAction("Gallery", new { id = gallery.ProductID });
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

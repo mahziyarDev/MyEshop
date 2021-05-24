@@ -1295,6 +1295,11 @@
     <Content Include="ckeditor\_samples\adobeair\run.bat" />
     <Content Include="ckeditor\_samples\adobeair\run.sh" />
     <Content Include="ckeditor\_samples\assets\output_for_flash.fla" />
+    <Content Include="Areas\Admin\Views\Products\Gallery.cshtml" />
+    <Content Include="Content\IransansFont\IRANSansWeb.eot" />
+    <Content Include="Content\IransansFont\IRANSansWeb.ttf" />
+    <Content Include="Content\IransansFont\IRANSansWeb.woff" />
+    <Content Include="Content\IransansFont\IRANSansWeb.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1305,6 +1310,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\SweetAlert.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
