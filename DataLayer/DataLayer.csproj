@@ -68,7 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EshopModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Features.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetaDataClasses\FeaturesMetaData.cs" />
     <Compile Include="MetaDataClasses\ProductMetaData.cs" />
+    <Compile Include="MetaDataClasses\Product_FeaturesMetaData.cs" />
     <Compile Include="MetaDataClasses\Product_GalleriesMetaData.cs" />
     <Compile Include="MetaDataClasses\Product_GroupMetaData.cs" />
     <Compile Include="MetaDataClasses\Product_Selected_GroupsMetaData.cs" />
@@ -76,6 +81,9 @@
     <Compile Include="MetaDataClasses\RolesMetaData.cs" />
     <Compile Include="MetaDataClasses\UsersMetaData.cs" />
     <Compile Include="Product.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Features.cs">
       <DependentUpon>EshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Product_Galleries.cs">

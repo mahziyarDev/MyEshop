@@ -10,14 +10,18 @@
         <AssociationConnector Association="MyEShop_DBModel.FK_Users_Roles" />
         <EntityTypeShape EntityType="MyEShop_DBModel.Product_Groups" Width="1.5" PointX="6.25" PointY="2" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Group_Product_Group1" />
-        <EntityTypeShape EntityType="MyEShop_DBModel.Product" Width="1.5" PointX="6.375" PointY="5.125" />
-        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Galleries" Width="1.5" PointX="3" PointY="5.125" />
-        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Selected_Groups" Width="1.5" PointX="8.875" PointY="3.375" />
-        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Tags" Width="1.5" PointX="6.375" PointY="9" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product" Width="1.5" PointX="3.625" PointY="5" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Galleries" Width="1.5" PointX="1.375" PointY="4.625" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Selected_Groups" Width="1.5" PointX="6" PointY="4.625" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Tags" Width="1.5" PointX="5.375" PointY="8.25" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Galleries_Product" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Selected_Groups_Product" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Tags_Product" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Selected_Groups_Product_Groups" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Features" Width="1.5" PointX="8" PointY="8.125" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Features" Width="1.5" PointX="8.875" PointY="5.5" />
+        <AssociationConnector Association="MyEShop_DBModel.FK_Product_Features_Features" />
+        <AssociationConnector Association="MyEShop_DBModel.FK_Product_Features_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

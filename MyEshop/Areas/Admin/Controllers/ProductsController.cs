@@ -24,6 +24,8 @@ namespace MyEshop.Areas.Admin.Controllers
             return View(db.Product.ToList());
         }
 
+        #region Details
+
         // GET: Admin/Products/Details/5
         public ActionResult Details(int? id)
         {
@@ -39,6 +41,9 @@ namespace MyEshop.Areas.Admin.Controllers
             return View(product);
         }
 
+        #endregion
+
+        #region Create
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
@@ -100,6 +105,10 @@ namespace MyEshop.Areas.Admin.Controllers
             ViewBag.Groups = db.Product_Groups.ToList();
             return View(products);
         }
+        #endregion
+
+
+        #region Edite
 
         // GET: Admin/Products/Edit/5
         public ActionResult Edit(int? id)
@@ -163,14 +172,18 @@ namespace MyEshop.Areas.Admin.Controllers
 
                 db.Product_Selected_Groups.Where(g => g.ProductID == product.ProductID).ToList()
                     .ForEach(g => db.Product_Selected_Groups.Remove(g));
-                foreach (int selectedGroup in selectedGroups)
+                if (selectedGroups!=null&&selectedGroups.Any())
                 {
-                    db.Product_Selected_Groups.Add(new Product_Selected_Groups()
+                    foreach (int selectedGroup in selectedGroups)
                     {
-                        ProductID = product.ProductID,
-                        GroupID = selectedGroup
-                    });
+                        db.Product_Selected_Groups.Add(new Product_Selected_Groups()
+                        {
+                            ProductID = product.ProductID,
+                            GroupID = selectedGroup
+                        });
+                    }
                 }
+                
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -182,6 +195,10 @@ namespace MyEshop.Areas.Admin.Controllers
 
             return View(product);
         }
+
+        #endregion
+
+        #region Delete
 
         // GET: Admin/Products/Delete/5
         public ActionResult Delete(int? id)
@@ -209,6 +226,12 @@ namespace MyEshop.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        #endregion
+
+
+
+
+        #region Gallery
 
         //for gallery
         public ActionResult Gallery(int id)
@@ -252,6 +275,39 @@ namespace MyEshop.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Gallery", new { id = gallery.ProductID });
         }
+
+        #endregion
+
+        #region ProductFeature
+
+        public ActionResult ProductFeature(int id)
+        {
+            
+            ViewBag.Features = db.Product_Features.Where(f => f.ProductID == id).ToList();
+            ViewBag.FeatureID = new SelectList(db.Features, "FeatureID","FeatureTitle");
+            return View(new Product_Features()
+            {
+                ProductID = id
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProductFeature(Product_Features productFeatures)
+        {
+            db.Product_Features.Add(productFeatures);
+            db.SaveChanges();
+            return RedirectToAction("ProductFeature",new {id = productFeatures.ProductID});
+        }
+
+        public void Delete_ProductFeature(int id)
+        {
+            var del = db.Product_Features.Find(id);
+            db.Product_Features.Remove(del);
+            db.SaveChanges();
+
+        }
+        #endregion
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
