@@ -13,15 +13,18 @@
         <EntityTypeShape EntityType="MyEShop_DBModel.Product" Width="1.5" PointX="3.625" PointY="5" />
         <EntityTypeShape EntityType="MyEShop_DBModel.Product_Galleries" Width="1.5" PointX="1.375" PointY="4.625" />
         <EntityTypeShape EntityType="MyEShop_DBModel.Product_Selected_Groups" Width="1.5" PointX="6" PointY="4.625" />
-        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Tags" Width="1.5" PointX="5.375" PointY="8.25" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product_Tags" Width="1.5" PointX="6.375" PointY="7.75" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Galleries_Product" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Selected_Groups_Product" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Tags_Product" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Selected_Groups_Product_Groups" />
-        <EntityTypeShape EntityType="MyEShop_DBModel.Features" Width="1.5" PointX="8" PointY="8.125" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Features" Width="1.5" PointX="8.875" PointY="8" />
         <EntityTypeShape EntityType="MyEShop_DBModel.Product_Features" Width="1.5" PointX="8.875" PointY="5.5" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Features_Features" />
         <AssociationConnector Association="MyEShop_DBModel.FK_Product_Features_Product" />
+        <EntityTypeShape EntityType="MyEShop_DBModel.Product_comments" Width="1.5" PointX="1.375" PointY="8.125" />
+        <AssociationConnector Association="MyEShop_DBModel.FK_Product_comments_Product" />
+        <AssociationConnector Association="MyEShop_DBModel.FK_Product_comments_Product_comments1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

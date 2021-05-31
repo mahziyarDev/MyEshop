@@ -42,5 +42,36 @@ namespace MyEshop.Controllers
             }
             return View(product);
         }
+
+        public ActionResult ShowComments(int id)
+        {
+            var comment = db.Product_comments.Where(c => c.ProductID == id);
+            return PartialView(comment);
+        }
+
+        public ActionResult CreateComment(int id)
+        {
+            
+            return PartialView(new Product_comments()
+            {
+                ProductID = id,
+            });
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateComment(Product_comments productComments)
+        {
+            if (ModelState.IsValid)
+            {
+                productComments.CreateDate = DateTime.Now;
+                db.Product_comments.Add(productComments);
+                db.SaveChanges();
+
+                return PartialView("ShowComments", db.Product_comments.Where(c => c.ProductID == productComments.ProductID));
+            }
+            return PartialView(productComments);
+        }
+
+
     }   
 }
