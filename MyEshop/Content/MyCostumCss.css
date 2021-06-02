@@ -1,0 +1,19 @@
+﻿.Fillter input[type=text]{
+    width: 100% !important;
+}
+.Fillter input[type=checkbox] {
+   margin: 2px
+}
+.form-archive {
+    padding: 5px
+}
+.SubGroups {
+    margin: 7px 14px 7px 0;
+}
+.btn-bg-blue {
+    background: #03A9F4 !important;
+}
+.btn-bg-blue:hover {
+    background: #4FC3F7 !important;
+    color: #fff !important
+}

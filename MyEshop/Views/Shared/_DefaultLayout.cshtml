@@ -16,6 +16,8 @@
         <link rel="stylesheet" type="text/css" href="/Content/css/carousel.css">
         <link rel="stylesheet" type="text/css" href="/Content/css/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="/Content/css/style.css">
+
+        <link href="~/Content/MyCostumCss.css" rel="stylesheet" />
         <script src="/Content/js/jquery-v1.11.3.js"></script>
     </head>
     <body>
@@ -69,13 +71,12 @@
             <div class="container">
                 <span class="responsive-list"><i class="fa fa-th-list"></i></span>
                 <ul>
+                    <li><a href="/">صفحه اصلی</a></li>
+                    <li><a href="/Archive">ارشیو محصولات </a></li>
+                    @*<li><a href=""> منوی شماره یک </a></li>
                     <li><a href=""> منوی شماره یک </a></li>
                     <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href="/LogOut">خروج از سایت</a></li>
+                    <li><a href=""> منوی شماره یک </a></li>*@
                 </ul>
 
                 <!-- Search -->
@@ -98,6 +99,7 @@
         <div class="container margin-top-25">
             <aside class="col-md-3 col-sm-4 right-side-content">
                 <!-- Basket -->
+                @RenderSection("Filter",false)
                 <section class="border-radius basket-side">
                     <header><h3> سبد خرید شما  </h3></header>
                     <article>

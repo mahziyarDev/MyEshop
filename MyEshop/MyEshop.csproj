@@ -1279,6 +1279,7 @@
     <Content Include="Content\js\owl.carousel.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\wow.js" />
+    <Content Include="Content\MyCostumCss.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\ProductImages\images.jpg" />
@@ -1458,6 +1459,7 @@
     <Content Include="Views\Product\ShowComments.cshtml" />
     <Content Include="Views\Product\CreateComment.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Product\ArchiveProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
