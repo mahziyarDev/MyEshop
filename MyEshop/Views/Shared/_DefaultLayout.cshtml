@@ -29,7 +29,7 @@
                     <div class="clientarea">
                         <ul>
                             @Html.Partial("_LoggedInUser")
-                            <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span>10</span></a></li>
+                            <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span id="CountShopCart"></span></a></li>
                         </ul>
                     </div>
                     <!-- End Clientarea and Basket -->
@@ -99,33 +99,10 @@
         <div class="container margin-top-25">
             <aside class="col-md-3 col-sm-4 right-side-content">
                 <!-- Basket -->
-                @RenderSection("Filter",false)
-                <section class="border-radius basket-side">
-                    <header><h3> سبد خرید شما  </h3></header>
-                    <article>
-                        <ul>
-                            <li>
-                                <img class="border-radius" src="/Content/img/1.jpg">
-                                <div class="left-basket">
-                                    <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <img class="border-radius" src="/Content/img/1.jpg">
-                                <div class="left-basket">
-                                    <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <img class="border-radius" src="/Content/img/1.jpg">
-                                <div class="left-basket">
-                                    <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
-                                </div>
-                            </li>
-                        </ul>
-                        <a href="" class="show-basket-button border-radius">مشاهده سبد خرید</a>
-                    </article>
-                </section>
+                @RenderSection("Filter", false)
+                <div id="ShowCart">
+                    @Html.Action("ShowCart", "ShopCart")
+                </div>
                 <!-- End Basket -->
                 <!-- compare -->
                 <section class="border-radius compare-side">
@@ -148,9 +125,10 @@
                         <a href="" class="show-compare-list border-radius">مشاهده لیست مقایسه</a>
                     </article>
                 </section>
+
                 <!-- End compare -->
                 <!-- Category -->
-                @Html.Action("ShowGroups","Product",new{area=""})
+                @Html.Action("ShowGroups", "Product", new { area = "" })
                 <!-- End Category -->
                 <!-- Category -->
                 <!-- End Category -->
@@ -233,7 +211,7 @@
                 </div>
             </div>
         </footer>
-
+        
         <script src="/Content/js/modernizr.js"></script>
         <script src="/Content/js/bootstrap.min.js"></script>
         <script src="/Content/js/owl.carousel.js"></script>
@@ -241,5 +219,6 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/js/MyShopCart.js"></script>
     </body>
 </html>

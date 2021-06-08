@@ -1276,6 +1276,7 @@
     <Content Include="Content\js\carousel.js" />
     <Content Include="Content\js\jquery-v1.11.3.js" />
     <Content Include="Content\js\modernizr.js" />
+    <Content Include="Content\js\MyShopCart.js" />
     <Content Include="Content\js\owl.carousel.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\wow.js" />
@@ -1406,6 +1407,8 @@
     <Compile Include="Controllers\ManageEmailsController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ShopCartController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1460,6 +1463,7 @@
     <Content Include="Views\Product\CreateComment.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Product\ArchiveProduct.cshtml" />
+    <Content Include="Views\ShopCart\ShowCart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
