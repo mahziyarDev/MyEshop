@@ -19,3 +19,16 @@ function AddToCart(id) {
 function updateShopCart() {
     $("#ShowCart").load("/ShopCart/ShowCart").fadeOut(100).fadeIn(800);
 }
+
+
+/*this script for command order*/
+
+function commandOrder(id,count) {
+    $.ajax({
+        url: "/ShopCart/CommandOrder/" + id,
+        type: "Get",
+        data: {count:count}
+    }).done(function(res) {
+        $("#ShowOrder").html(res);
+    });
+}
