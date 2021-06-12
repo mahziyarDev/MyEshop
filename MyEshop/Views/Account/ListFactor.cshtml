@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DataLayer.ViewModel.FactorViewModel>
+@{
+    ViewBag.Title = "لیست فاکتور ها";
+}
+
+
+
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>
+            تاریخ محصول
+        </th>
+
+        <th>
+            شماره فاکتور
+        </th>
+        <th>
+            وضعیت پرداخت
+        </th>
+  
+        <th>مشاهده ریز فاکتور</th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.DateFactor.ToString("dddd, dd MMMM yyyy")
+            </td>
+            <td>
+                @item.FactorID
+            </td>
+            <td>
+                @{
+                    if (@item.IsFinally == true)
+                    {
+                        <span class="text-info">پرداخت انجام شده</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">پرداخت موفقیت امیز نبود</span>
+                    }
+                }
+                
+            </td>
+            <td><a class="text-info" href="/DetailFactor/@item.FactorID">کلیک کنید</a></td>
+        </tr>
+    }
+
+</table>

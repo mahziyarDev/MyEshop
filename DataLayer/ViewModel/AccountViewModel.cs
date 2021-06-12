@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Security.AccessControl;
 
 namespace DataLayer.ViewModel
@@ -80,5 +81,20 @@ namespace DataLayer.ViewModel
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "کلمه های عبو با هم مغایرت دارند")]
         public string RePassword { get; set; }
+    }
+
+    public class FactorViewModel
+    {
+        public int  FactorID { get; set; }
+        public DateTime DateFactor { get; set; }
+        public bool IsFinally { get; set; }
+    }
+    public class FactorDetailsViewModel
+    {
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
+        public int Count { get; set; }
+        public int Price{ get; set; }
+        public int Sum { get; set; }
     }
 }

@@ -115,6 +115,8 @@
     <Content Include="Areas\Admin\Content\css\plugins\social-buttons\social-buttons.css" />
     <Content Include="Areas\Admin\Content\css\plugins\timeline\timeline.css" />
     <Content Include="Areas\Admin\Content\css\sb-admin.css" />
+    <Content Include="Areas\Admin\Content\css\styleCDN_1.css" />
+    <Content Include="Areas\Admin\Content\css\styleCDN_2 .css" />
     <Content Include="Areas\Admin\Content\font-awesome\css\font-awesome.css" />
     <Content Include="Areas\Admin\Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Areas\Admin\Content\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -125,6 +127,7 @@
     <Content Include="Areas\Admin\Content\js\demo\flot-demo.js" />
     <Content Include="Areas\Admin\Content\js\demo\morris-demo.js" />
     <Content Include="Areas\Admin\Content\js\jquery-1.10.2.js" />
+    <Content Include="Areas\Admin\Content\js\kendo.all.min.js" />
     <Content Include="Areas\Admin\Content\js\plugins\dataTables\dataTables.bootstrap.js" />
     <Content Include="Areas\Admin\Content\js\plugins\dataTables\jquery.dataTables.js" />
     <Content Include="Areas\Admin\Content\js\plugins\flot\excanvas.min.js" />
@@ -1377,6 +1380,11 @@
     <Content Include="Areas\Admin\Content\fonts\IRANSansWeb.woff" />
     <Content Include="Areas\Admin\Content\fonts\IRANSansWeb.woff2" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sliders\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1398,6 +1406,7 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Product_GroupsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\UserPanel\Controllers\AccountController.cs" />
     <Compile Include="Areas\UserPanel\Controllers\UserBaseController.cs" />
@@ -1466,6 +1475,8 @@
     <Content Include="Views\ShopCart\ShowCart.cshtml" />
     <Content Include="Views\ShopCart\Index.cshtml" />
     <Content Include="Views\ShopCart\Order.cshtml" />
+    <Content Include="Views\Account\ListFactor.cshtml" />
+    <Content Include="Views\Account\DetailFactor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1478,6 +1489,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\UserPanel\Data\" />
     <Folder Include="Areas\UserPanel\Views\Shared\" />
+    <Folder Include="Images\Slider\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

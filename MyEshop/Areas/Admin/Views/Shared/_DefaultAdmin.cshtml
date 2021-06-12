@@ -21,6 +21,7 @@
     <!-- SB Admin CSS - Include with every page -->
     <link href="/Areas/Admin/Content/css/sb-admin.css" rel="stylesheet">
 
+    
 </head>
 
 <body>
@@ -290,7 +291,7 @@
                         <li>
                             <a href="/Admin/Users/"><i class="fa fa-user fa-fw"></i> مدیریت کاربران</a>
                         </li>
-                        
+
                     </ul>
                     <!-- /#side-menu -->
                 </div>
@@ -299,10 +300,10 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-    <div id="page-wrapper">
-        
-        @RenderBody()
-    </div>
+        <div id="page-wrapper">
+
+            @RenderBody()
+        </div>
         <!-- /#page-wrapper -->
 
     </div>
@@ -314,18 +315,19 @@
 
     <!-- Page-Level Plugin Scripts - Dashboard -->
     <script src="/Areas/Admin/Content/js/plugins/morris/raphael-2.1.0.min.js"></script>
-    <script src="/Areas/Admin/Content/js/plugins/morris/morris.js"></script>
+  
 
     <!-- SB Admin Scripts - Include with every page -->
     <script src="/Areas/Admin/Content/js/sb-admin.js"></script>
 
-    <!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
-    <script src="/Areas/Admin/Content/js/demo/dashboard-demo.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script src="~/Scripts/SweetAlert.js"></script>
-@RenderSection("script",false)
+<!-- Page-Level Demo Scripts - Dashboard - Use for reference -->
+
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@RenderSection("script", false)
+    
 </body>
 
 </html>

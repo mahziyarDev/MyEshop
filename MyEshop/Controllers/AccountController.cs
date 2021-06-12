@@ -12,7 +12,7 @@ namespace MyEshop.Controllers
     {
         private MyEShop_DBEntities db = new MyEShop_DBEntities();
         // GET: Account
-
+        #region Register
         [Route("Register")]
         public ActionResult Register()
         {
@@ -57,7 +57,13 @@ namespace MyEshop.Controllers
         }
 
 
+
+
+        #endregion
+
         //for Login
+
+        #region Login
 
         [Route("Login")]
         public ActionResult Login()
@@ -97,7 +103,12 @@ namespace MyEshop.Controllers
         }
 
 
+
+        #endregion
+
         //For LogOut User
+
+        #region LogOut
 
         [Route("LogOut")]
         public ActionResult LogOut()
@@ -106,7 +117,12 @@ namespace MyEshop.Controllers
             return Redirect("/Login");
         }
 
+
+        #endregion
+
         //for Active User
+
+        #region ActiveUser
 
         public ActionResult ActiveUser(string ActiveCodes)
         {
@@ -122,8 +138,14 @@ namespace MyEshop.Controllers
             return View();
         }
 
+        #endregion
+
+
 
         //ForGotPassword
+
+        #region ForGotPassword
+
         [Route("ForgotPassword")]
         public ActionResult ForgotPassword()
         {
@@ -159,8 +181,13 @@ namespace MyEshop.Controllers
             return View();
         }
 
+
+        #endregion
+
         //RecoveryPassword
-        
+
+        #region REcoverPassword
+
         public ActionResult RecoveryPassword(string id)
         {
             return View();
@@ -168,7 +195,7 @@ namespace MyEshop.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RecoveryPassword(string id,RecoveryPasswordViewModel Recovery)
+        public ActionResult RecoveryPassword(string id, RecoveryPasswordViewModel Recovery)
         {
             if (ModelState.IsValid)
             {
@@ -185,5 +212,52 @@ namespace MyEshop.Controllers
             }
             return View(Recovery);
         }
+
+        #endregion
+
+        //list Factor
+
+        #region Factor
+        [Route("Factorlist")]
+        public ActionResult ListFactor()
+        {
+            int userId = db.Users.Single(p => p.UserName == User.Identity.Name).UserID;
+            var Factor = db.Orders.Single(p => p.UserID == userId);
+          
+            List<FactorViewModel> listFactor = new List<FactorViewModel>();
+            listFactor.Add(new FactorViewModel()
+            {
+                FactorID = Factor.OrderID,
+                DateFactor = Factor.Date,
+                IsFinally = Factor.IsFinaly,
+            });
+            return View(listFactor);
+        }
+
+        #endregion
+
+        #region DetailFactor
+        [Route("DetailFactor/{id}")]
+        public ActionResult DetailFactor(int id)
+        {
+            var detailFactor = db.OrderDetails.Where(O=>O.OrderID == id);
+            List<FactorDetailsViewModel> factorDetails = new List<FactorDetailsViewModel>();
+            foreach (var item in detailFactor)
+            {
+                factorDetails.Add(new FactorDetailsViewModel()
+                {
+                    ProductId = item.ProductID,
+                    ProductName = item.Product.Title,
+                    Count = item.Count,
+                    Price = item.Price,
+                    Sum = item.Count * item.Price
+                });
+            }
+           
+            ViewBag.FactorId = id;
+            return View(factorDetails);
+        }
+
+        #endregion
     }
 }

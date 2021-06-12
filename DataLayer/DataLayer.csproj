@@ -81,6 +81,7 @@
     <Compile Include="MetaDataClasses\Product_TagsMetaData.cs" />
     <Compile Include="MetaDataClasses\OrderDetailsMetaData.cs" />
     <Compile Include="MetaDataClasses\OrdersMetaData.cs" />
+    <Compile Include="MetaDataClasses\SliderMetaData.cs" />
     <Compile Include="MetaDataClasses\RolesMetaData.cs" />
     <Compile Include="MetaDataClasses\UsersMetaData.cs" />
     <Compile Include="OrderDetails.cs">
@@ -112,6 +113,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles.cs">
+      <DependentUpon>EshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Slider.cs">
       <DependentUpon>EshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">

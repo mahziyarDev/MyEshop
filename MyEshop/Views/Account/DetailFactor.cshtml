@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DataLayer.ViewModel.FactorDetailsViewModel>
+@{
+    ViewBag.Title = "جزییات فاکتور";
+}
+
+<h2>جزییات فاکتور شماره @ViewBag.FactorId</h2>
+
+<br/>
+<br/>
+<table class="table table-hover table-striped table-bordered">
+    <tr>
+        <th>
+            نام محصول
+        </th>
+
+        <th>
+            تعداد محصول
+        </th>
+
+        <th>
+            قیمت محصول
+        </th>
+        <th>
+            جمع قیمت
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a class="text-info" href="/ShowProduct/@item.ProductId">@item.ProductName</a>
+            </td>
+            <td>
+                @item.Count
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Sum
+            </td>
+        </tr>
+    }
+
+</table>
