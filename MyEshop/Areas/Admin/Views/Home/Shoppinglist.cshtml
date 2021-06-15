@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DataLayer.Orders>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>شماره فاکتور</th>
+        <th>تاریخ فاکتور</th>
+        <th>نام کاربری</th>
+        <th>شماره تماس و ادرس ایمیل</th>
+        <th>جزییات فاکتور</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.OrderID
+            </td>
+            <td>
+                @item.Date.ToString("yyyy/MM/dd")
+            </td>
+            <td>
+                @item.Users.UserName
+            </td>
+            <td>
+                @item.Users.Email
+                <br/>
+            </td>
+            <td>
+                @item.IsFinaly
+            </td>
+        </tr>
+    }
+</table>

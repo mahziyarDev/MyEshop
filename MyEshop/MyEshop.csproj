@@ -1385,6 +1385,7 @@
     <Content Include="Areas\Admin\Views\Sliders\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Sliders\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sliders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Shoppinglist.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

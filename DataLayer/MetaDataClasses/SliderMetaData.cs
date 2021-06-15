@@ -25,6 +25,8 @@ namespace DataLayer
         public bool IsActive { get; set; }
 
         [Display(Name = "ادرس اینترنتی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Url(ErrorMessage = "آدرس وارد شده معتبر نمی باشد")]
         public string Link { get; set; }
     }
 

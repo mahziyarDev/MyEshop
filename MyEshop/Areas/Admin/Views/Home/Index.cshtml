@@ -6,3 +6,22 @@
 <br/>
 <h2><span class="highLite">@User.Identity.Name</span> خوش امدید به پنل مدیریت سایت</h2>
 
+<br/>
+
+<a onclick="ReloadListShop()" class="btn btn-info">مشاهده همه فاکتور ها</a>
+<br/>
+<div id="ListShopping"></div>
+
+
+
+@section script
+{
+    <script>
+        function ReloadListShop() {
+            $.get("/Admin/Home/Shoppinglist/",
+                function(res) {
+                    $("#ListShopping").html(res);
+                });
+        }
+    </script>
+}
