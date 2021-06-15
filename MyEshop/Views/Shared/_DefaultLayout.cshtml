@@ -30,6 +30,8 @@
                         <ul>
                             @Html.Partial("_LoggedInUser")
                             <li><a href=""><i class="fa fa-shopping-bag"></i> سبد خرید <span id="CountShopCart"></span></a></li>
+                            
+
                         </ul>
                     </div>
                     <!-- End Clientarea and Basket -->
@@ -39,10 +41,7 @@
                     <div class="socials">
                         <ul>
                             <li><a href="" class="social-icon" data-balloon=" اینستاگرام " data-balloon-pos="down"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="" class="social-icon" data-balloon=" لینکداین " data-balloon-pos="down"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="" class="social-icon" data-balloon=" فیس بوک " data-balloon-pos="down"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="" class="social-icon" data-balloon=" تلگرام " data-balloon-pos="down"><i class="fa fa-paper-plane"></i></a></li>
-                            <li><a href="" class="social-icon" data-balloon=" توئیتر " data-balloon-pos="down"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                     <!-- End Social -->
@@ -54,9 +53,8 @@
         <header class="header-site">
             <div class="container">
                 <div class="col-md-7 col-sm-7 logo-layer">
-                    <a href="" class="logo"><img src="/Content/img/logo.png"></a>
-                    <h1>فروشگاه <span>آنلایــــــن</span> </h1>
-                    <h2>آموزشگاه برنامه نویســـان</h2>
+                    @*<a href="" class="logo"><img src="/Content/img/logo.png"></a>*@
+                    جایی برای لوگو
                 </div>
                 <div class="col-md-5 col-sm-5 left-header-site">
                     <h5> پشتیبانــــی 24 ساعتـــــه </h5>
@@ -73,12 +71,12 @@
                 <ul>
                     <li><a href="/">صفحه اصلی</a></li>
                     <li><a href="/Archive">ارشیو محصولات </a></li>
-                    @*<li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>
-                    <li><a href=""> منوی شماره یک </a></li>*@
+                    <li><a href="/Archive">راهنمای خرید از سایت </a></li>
+                    <li><a href="/Archive">همه محصولات ما </a></li>
+                    <li><a href="/Archive">در باره ما </a></li>
+                    <li><a href="/Archive">تماس با ما </a></li>
                 </ul>
-
+                
                 <!-- Search -->
                 <div class="form-search">
                     <span><i class="fa fa-search"></i></span>
@@ -101,7 +99,7 @@
                 <!-- Basket -->
                 @RenderSection("Filter", false)
                 <div id="ShowCart">
-                    @Html.Action("ShowCart", "ShopCart")
+                    @Html.Action("ShowCart", "ShopCart",new {area=""})
                 </div>
                 <!-- End Basket -->
                 <!-- compare -->

@@ -215,49 +215,6 @@ namespace MyEshop.Controllers
 
         #endregion
 
-        //list Factor
-
-        #region Factor
-        [Route("Factorlist")]
-        public ActionResult ListFactor()
-        {
-            int userId = db.Users.Single(p => p.UserName == User.Identity.Name).UserID;
-            var Factor = db.Orders.Single(p => p.UserID == userId);
-          
-            List<FactorViewModel> listFactor = new List<FactorViewModel>();
-            listFactor.Add(new FactorViewModel()
-            {
-                FactorID = Factor.OrderID,
-                DateFactor = Factor.Date,
-                IsFinally = Factor.IsFinaly,
-            });
-            return View(listFactor);
-        }
-
-        #endregion
-
-        #region DetailFactor
-        [Route("DetailFactor/{id}")]
-        public ActionResult DetailFactor(int id)
-        {
-            var detailFactor = db.OrderDetails.Where(O=>O.OrderID == id);
-            List<FactorDetailsViewModel> factorDetails = new List<FactorDetailsViewModel>();
-            foreach (var item in detailFactor)
-            {
-                factorDetails.Add(new FactorDetailsViewModel()
-                {
-                    ProductId = item.ProductID,
-                    ProductName = item.Product.Title,
-                    Count = item.Count,
-                    Price = item.Price,
-                    Sum = item.Count * item.Price
-                });
-            }
-           
-            ViewBag.FactorId = id;
-            return View(factorDetails);
-        }
-
-        #endregion
+       
     }
 }

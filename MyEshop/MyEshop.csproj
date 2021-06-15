@@ -1386,6 +1386,8 @@
     <Content Include="Areas\Admin\Views\Sliders\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Sliders\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Shoppinglist.cshtml" />
+    <Content Include="Areas\UserPanel\Views\Account\Index.cshtml" />
+    <Content Include="Areas\UserPanel\Views\Account\ListFactor.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1476,8 +1478,7 @@
     <Content Include="Views\ShopCart\ShowCart.cshtml" />
     <Content Include="Views\ShopCart\Index.cshtml" />
     <Content Include="Views\ShopCart\Order.cshtml" />
-    <Content Include="Views\Account\ListFactor.cshtml" />
-    <Content Include="Views\Account\DetailFactor.cshtml" />
+    <Content Include="Areas\UserPanel\Views\Account\DetailFactor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "پنل کاربری";
+}
+
+<br />
+<h4>سلام @User.Identity.Name به پنل کاربری خود خوش امدید</h4>
+<br />
+<p>شما می توانید با کلید بر روی  لینک های زیر حساب خود را ویرایش کنید</p>
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a class="text-blue Text-size-panel-list" href="@Url.Action("ChangePassword","Account",new {area="UserPanel"})">تغییر رمز عبور</a>
+            </li>
+            <li class="list-group-item">
+                <a class="text-blue Text-size-panel-list" href="#">تغییر عکس پروفایل</a>
+            </li>
+            <li class="list-group-item">
+                <a class="text-blue Text-size-panel-list" href="#">تغییر تغییر ادرس و کد پستی</a>
+            </li>
+            <li class="list-group-item">
+                <a class="text-blue Text-size-panel-list" href="@Url.Action("ListFactor","Account",new {area="UserPanel"})">مشاهد فاکتورها</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="col-md-6 text-center">
+        <img class="img-circle imgae_avatar_userpanel" src="~/Content/img/avatar.jpg"/>
+        <br/>
+        <p>مهزیار دهقان چناری</p>
+        <p>شماره تلفن : <span>09123151249</span></p>
+        <p>ادرس ایمیل : <span>mahziyar138006@gmail.com</span></p>
+        <p>
+            <span>ادرس:</span>
+            <br/>
+            <span>تهران ، خیابان شریعتی ، ابتدای خیابان ملک ، کوچه ایرانیاد ، پلاک 1 ، آموزشگاه برنامه نویسان</span>
+        </p>
+        <p>کد پستی: <span>8845621230</span></p>
+    </div>
+</div>

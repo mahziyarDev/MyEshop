@@ -1,6 +1,7 @@
 ﻿@if (User.Identity.IsAuthenticated)
 {
     <li><a href="#"><i class="fa fa-user"></i> <label>@User.Identity.Name خوش آمدید !</label> </a></li>
+    <li><a href="@Url.Action("Index","Account",new {area="UserPanel"})"><i class="fa fa-sign-in"></i>پنل کاربری</a></li>
     <li><a href="/LogOut"><i class="fa fa-sign-out"></i> <label>خروج</label> </a></li>
 }
 else

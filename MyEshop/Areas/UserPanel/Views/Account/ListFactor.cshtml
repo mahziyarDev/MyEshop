@@ -42,7 +42,7 @@
                 }
                 
             </td>
-            <td><a class="text-info" href="/DetailFactor/@item.FactorID">کلیک کنید</a></td>
+            <td><a class="text-info" href="@Url.Action("DetailFactor","Account",new {area="UserPanel",id= item.FactorID})">کلیک کنید</a></td>
         </tr>
     }
 
